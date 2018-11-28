@@ -1,0 +1,83 @@
+#made by Muskan Jain
+#0187cs161062
+
+import turtle as t
+import time
+import random as ran
+
+#window appearance
+window=t.Screen()
+window.title("TURTLE RACE")
+t.color("black")
+t.bgcolor("forestgreen")
+t.speed(0)
+t.penup()
+t.setpos(-150,200)
+t.write("RACING TURTLES", font=("Arial",25,"bold","underline"))
+t.penup()
+
+#finish line
+stamp_size = 20
+square_size = 15
+finish_line = 200
+t.color("white")
+t.shape("square")
+t.shapesize(square_size/stamp_size)
+t.penup()
+
+for i in range(10):
+    t.setpos(finish_line , ( 150 - ( i * square_size * 2 )))
+    t.stamp()
+    
+for j in range(10):
+    t.setpos(finish_line + square_size , ((150 - square_size) - (j * square_size *2)))
+    t.stamp()
+    
+t.hideturtle()
+
+#turtle 01
+t_01=t.Turtle()
+t_01.speed(0)
+t_01.color("red")
+t_01.shape("turtle")
+t_01.penup()
+t_01.goto(-250,100)
+t_01.pendown()
+
+#turtle 02
+t_02=t.Turtle()
+t_02.speed(0)
+t_02.color("yellow")
+t_02.shape("turtle")
+t_02.penup()
+t_02.goto(-250,50)
+t_02.pendown()
+
+#turtle 03
+t_03=t.Turtle()
+t_03.speed(0)
+t_03.color("indigo")
+t_03.shape("turtle")
+t_03.penup()
+t_03.goto(-250,0)
+t_03.pendown()
+
+#turtle 04
+t_04=t.Turtle()
+t_04.speed(0)
+t_04.color("cyan")
+t_04.shape("turtle")
+t_04.penup()
+t_04.goto(-250,-50)
+t_04.pendown()
+
+time.sleep(3) #pausing game for 3 seconds before the game starts
+
+#racing
+for k in range(150):
+    t_01.forward(ran.randint(1,5))
+    t_02.forward(ran.randint(1,5))
+    t_03.forward(ran.randint(1,5))
+    t_04.forward(ran.randint(1,5))
+
+t.exitonclick()
